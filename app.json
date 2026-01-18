@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "Dolphin",
+    "slug": "dolphin-expo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logos/dolphin-logo-main.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/logos/dolphin-splash-logo.svg",
+      "resizeMode": "contain",
+      "backgroundColor": "#010025"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dolphin.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to camera to scan documents.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to photo library to select profile pictures."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logos/dolphin-logo-main.png",
+        "backgroundColor": "#010025"
+      },
+      "package": "com.dolphin.app",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/logos/dolphin-logo-main.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them."
+        }
+      ]
+    ],
+    "scheme": "dolphin"
+  }
+}
