@@ -7,7 +7,7 @@
     "icon": "./assets/logos/dolphin-logo-main.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/logos/dolphin-splash-logo.svg",
+      "image": "./assets/logos/dolphin-logo-main.png",
       "resizeMode": "contain",
       "backgroundColor": "#010025"
     },
@@ -52,7 +52,8 @@
         {
           "photosPermission": "The app accesses your photos to let you share them."
         }
-      ]
+      ],
+      "expo-asset"
     ],
     "scheme": "dolphin"
   }
