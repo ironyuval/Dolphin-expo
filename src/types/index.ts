@@ -1,4 +1,7 @@
 // Shared TypeScript types
+import { TextInput } from 'react-native';
+
+import { ViewStyle } from 'react-native';
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -8,6 +11,7 @@ export interface ButtonProps {
   icon?: React.ComponentType<any>;
   disabled?: boolean;
   className?: string;
+  style?: ViewStyle;
   onPress?: () => void;
   justify?: 'center' | 'space-between' | 'start' | 'end';
   type?: 'button' | 'submit';
@@ -28,7 +32,8 @@ export interface InputProps {
   placeholderAlign?: 'left' | 'right';
   labelColor?: string;
   customPrefix?: React.ReactNode;
-  autoComplete?: string;
+  autoComplete?: React.ComponentProps<typeof TextInput>['autoComplete'];
+  keyboardType?: React.ComponentProps<typeof TextInput>['keyboardType'];
   secureTextEntry?: boolean;
 }
 

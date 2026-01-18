@@ -46,15 +46,15 @@ export default function Input({
     textAlign === 'left' ? styles.alignLeft : styles.alignRight,
   ];
 
-  const wrapperStyle: ViewStyle[] = [
+  const wrapperStyle: (ViewStyle | undefined)[] = [
     styles.inputWrapper,
-    error && styles.errorBorder,
+    error ? styles.errorBorder : undefined,
     iconPosition === 'end' ? styles.rowReverse : styles.row,
     textAlign === 'left' ? styles.dirLtr : styles.dirRtl,
-  ];
+  ].filter((style): style is ViewStyle => style !== undefined);
 
   return (
-    <View style={[styles.container, className]}>
+    <View style={styles.container}>
       {label && (
         <Text style={[styles.label, labelColor && { color: labelColor }]}>
           {label}

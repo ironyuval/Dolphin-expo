@@ -11,6 +11,7 @@ export default function Button({
   icon: Icon,
   disabled = false,
   className = '',
+  style,
   onPress,
   justify = 'center',
   ...props 
@@ -67,7 +68,7 @@ export default function Button({
 
   return (
     <TouchableOpacity 
-      style={getButtonStyle()}
+      style={[getButtonStyle(), style]}
       onPress={onPress}
       disabled={disabled}
       activeOpacity={0.8}

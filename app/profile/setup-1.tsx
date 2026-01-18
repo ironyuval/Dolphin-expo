@@ -27,12 +27,12 @@ export default function ProfileSetup1() {
     { id: 'rescue', label: 'צולל הצלה - כוכב שלישי', value: 'Rescue Diver' },
     {
       id: 'assistant',
-      label: 'מדריך עוזר - דרגה א'',
+      label: `מדריך עוזר - דרגה א'`,
       value: 'Assistant Instructor',
     },
     {
       id: 'instructor',
-      label: 'מדריך מוסמך - דרגה ב'',
+      label: `מדריך מוסמך - דרגה ב'`,
       value: 'Certified Instructor',
     },
     { id: 'senior', label: 'צולל בכיר', value: 'Senior Diver' },

@@ -6,8 +6,6 @@ import StatusBar from '@/components/shared/StatusBar';
 import Button from '@/components/shared/Button';
 import BackgroundImage from '@/components/shared/BackgroundImage';
 import { colors, typography, spacing, borderRadius, shadows } from '@/constants/design-system';
-import FishGroup1 from '@/assets/decorative/fish-group-1.svg';
-import FishGroup2 from '@/assets/decorative/fish-group-2.svg';
 import AuthBg from '@/assets/backgrounds/auth-main-bg.svg';
 
 export default function LanguagePicking() {
@@ -19,8 +17,9 @@ export default function LanguagePicking() {
   };
 
   return (
-    <BackgroundImage src={AuthBg} style={styles.container}>
-      <StatusBar variant="light" />
+    <View style={styles.container}>
+      <BackgroundImage src={AuthBg}>
+        <StatusBar variant="light" />
       
       <View style={styles.content}>
         <Text style={styles.title}>Choose your preferred language</Text>
@@ -73,14 +72,8 @@ export default function LanguagePicking() {
         <View style={styles.dot} />
       </View>
 
-      {/* Decorative elements */}
-      <View style={styles.fishGroup1}>
-        <FishGroup1 width={120} height={80} opacity={0.25} />
-      </View>
-      <View style={styles.fishGroup2}>
-        <FishGroup2 width={100} height={60} opacity={0.2} />
-      </View>
-    </BackgroundImage>
+      </BackgroundImage>
+    </View>
   );
 }
 
