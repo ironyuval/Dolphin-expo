@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import StatusBar from '@/components/shared/StatusBar';
 import Button from '@/components/shared/Button';
 import Input from '@/components/shared/Input';
-import { colors, typography, spacing, borderRadius } from '@/constants/design-system';
+import { colors, typography, spacing, borderRadius, shadows } from '@/constants/design-system';
 import SettingsIcon from '@/assets/icons/social/settings.svg';
 import ShowPasswordIcon from '@/assets/icons/ui/show_password.svg';
 import Svg, { Path } from 'react-native-svg';
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
-    ...colors.shadows.sm,
+    ...shadows.sm,
   },
   flagCircle: {
     width: '100%',

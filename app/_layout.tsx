@@ -5,10 +5,6 @@ import { I18nManager } from 'react-native';
 import { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
-// Force RTL for Hebrew
-I18nManager.forceRTL(true);
-I18nManager.allowRTL(true);
-
 export default function RootLayout() {
   useEffect(() => {
     // Ensure RTL is enabled
@@ -27,6 +23,7 @@ export default function RootLayout() {
             contentStyle: { backgroundColor: '#FAFAFA' },
           }}
         >
+          <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen name="(auth)" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="diving" options={{ headerShown: false }} />
@@ -42,5 +39,6 @@ export default function RootLayout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#FAFAFA',
   },
 });

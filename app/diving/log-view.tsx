@@ -13,7 +13,7 @@ const gallery6 = require('@/assets/photos/gallery-6.png');
 
 const diveData = {
   location: 'ריף הדולפינים-אילת, ישראל',
-  subtitle: 'צלילה מס' 2 - 01.01.2025',
+  subtitle: 'צלילה מס\' 2 - 01.01.2025',
   buddy: 'ישראל ישראלי + לורם איפסום',
   timeInfo: '12:00-13:01 | 43 ד"ק זמן תחתית',
   weightInfo: '6-6 lb',

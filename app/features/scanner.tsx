@@ -6,7 +6,7 @@ import { CameraView, useCameraPermissions } from 'expo-camera';
 import StatusBar from '@/components/shared/StatusBar';
 import { colors, typography, spacing, borderRadius } from '@/constants/design-system';
 import XIcon from '@/assets/icons/ui/icon-close.svg';
-import UploadIcon from '@/assets/icons/ui/upload.svg';
+import UploadIcon from '@/assets/icons/upload.svg';
 
 export default function Scanner() {
   const router = useRouter();

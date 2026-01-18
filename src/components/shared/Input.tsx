@@ -28,12 +28,8 @@ export default function Input({
   const getIconSource = (): ImageSourcePropType | null => {
     if (!icon) return null;
     if (typeof icon === 'string') {
-      // Try require first, fallback to URI
-      try {
-        return require(icon);
-      } catch {
-        return { uri: icon };
-      }
+      // Treat string as URI - Metro bundler requires static require() paths
+      return { uri: icon };
     }
     if ('uri' in icon || 'default' in icon) {
       return icon as ImageSourcePropType;
@@ -51,10 +47,10 @@ export default function Input({
     error && styles.errorBorder,
     iconPosition === 'end' ? styles.rowReverse : styles.row,
     textAlign === 'left' ? styles.dirLtr : styles.dirRtl,
-  ];
+  ].filter(Boolean) as ViewStyle[];
 
   return (
-    <View style={[styles.container, className]}>
+    <View style={[styles.container, className as ViewStyle]}>
       {label && (
         <Text style={[styles.label, labelColor && { color: labelColor }]}>
           {label}
@@ -73,6 +69,7 @@ export default function Input({
           secureTextEntry={isPassword}
           placeholderTextColor="rgba(1, 0, 37, 0.5)"
           textAlign={finalPlaceholderAlign}
+          {...(props.autoComplete ? { autoComplete: props.autoComplete as any } : {})}
           {...props}
         />
 

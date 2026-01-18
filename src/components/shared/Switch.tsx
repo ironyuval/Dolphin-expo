@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, View, StyleSheet, Animated } from 'react-native';
-import { colors, borderRadius } from '@/constants/design-system';
+import { colors, borderRadius, shadows } from '@/constants/design-system';
 
 interface SwitchProps {
   checked: boolean;
@@ -67,6 +67,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     position: 'absolute',
     left: 2,
-    ...colors.shadows.sm,
+    ...shadows.sm,
   },
 });

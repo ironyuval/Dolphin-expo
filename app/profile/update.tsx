@@ -11,7 +11,7 @@ import FormGroup from '@/components/shared/FormGroup';
 import { colors, typography, spacing, borderRadius, shadows } from '@/constants/design-system';
 import SettingsIcon from '@/assets/icons/social/settings.svg';
 import PhoneIcon from '@/assets/icons/phone.svg';
-import ChevronDownIcon from '@/assets/icons/ui/chevron-down.svg';
+import ChevronDownIcon from '@/assets/icons/chevron-down.svg';
 
 export default function PersonalInfoUpdate() {
   const router = useRouter();

@@ -18,8 +18,10 @@ export default function LanguagePicking() {
     router.push('/(auth)/onboarding');
   };
 
+  console.log('test')
+
   return (
-    <BackgroundImage src={AuthBg} style={styles.container}>
+    <BackgroundImage src={AuthBg} className={styles.container}>
       <StatusBar variant="light" />
       
       <View style={styles.content}>

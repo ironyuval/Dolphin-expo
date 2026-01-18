@@ -3,10 +3,13 @@ import { ImageBackground, View, StyleSheet, ImageSourcePropType } from 'react-na
 import { LinearGradient } from 'expo-linear-gradient';
 import { SvgProps } from 'react-native-svg';
 
+import { ViewStyle } from 'react-native';
+
 interface BackgroundImageProps {
   src?: ImageSourcePropType | string | React.ComponentType<SvgProps>;
   alt?: string;
-  className?: string;
+  className?: string | ViewStyle;
+  style?: ViewStyle;
   overlay?: boolean;
   gradient?: boolean;
   children?: React.ReactNode;
@@ -16,6 +19,7 @@ export default function BackgroundImage({
   src, 
   alt = '', 
   className = '',
+  style,
   overlay = false,
   gradient = false,
   children 
@@ -27,9 +31,9 @@ export default function BackgroundImage({
   const SvgComponent = isReactComponent ? src as React.ComponentType<SvgProps> : null;
 
   return (
-    <View style={[styles.container, className]}>
+    <View style={[styles.container, className, style]}>
       {SvgComponent ? (
-        <View style={styles.container}>
+        <View style={styles.svgContainer}>
           <SvgComponent width="100%" height="100%" style={StyleSheet.absoluteFill} />
           {overlay && <View style={styles.overlay} />}
           {gradient && (
@@ -64,13 +68,19 @@ export default function BackgroundImage({
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: '100%',
-    height: '100%',
+    position: 'relative',
+    backgroundColor: '#010025', // Fallback background color (dark blue from design system)
+  },
+  svgContainer: {
+    flex: 1,
+    width: '100%',
     position: 'relative',
   },
   image: {
+    flex: 1,
     width: '100%',
-    height: '100%',
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,

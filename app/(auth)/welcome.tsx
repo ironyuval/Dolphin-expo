@@ -4,7 +4,7 @@ import { useRouter } from 'expo-router';
 import StatusBar from '@/components/shared/StatusBar';
 import Button from '@/components/shared/Button';
 import BackgroundImage from '@/components/shared/BackgroundImage';
-import { colors, typography, spacing, borderRadius } from '@/constants/design-system';
+import { colors, typography, spacing, borderRadius, shadows } from '@/constants/design-system';
 import AuthWelcomeBg from '@/assets/backgrounds/auth-welcome-bg.svg';
 import SettingsIcon from '@/assets/icons/social/settings.svg';
 import GoogleIcon from '@/assets/icons/social/icon-google.png';
@@ -214,6 +214,6 @@ const styles = StyleSheet.create({
     opacity: 1,
     width: 12,
     height: 12,
-    ...colors.shadows.sm,
+    ...shadows.sm,
   },
 });

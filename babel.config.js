@@ -8,12 +8,13 @@ module.exports = function(api) {
         {
           root: ['./'],
           alias: {
-            '@': './src',
+            // Specific aliases must come before general '@' alias
+            '@/assets': './assets',
             '@/components': './src/components',
             '@/constants': './src/constants',
             '@/types': './src/types',
             '@/utils': './src/utils',
-            '@/assets': './assets',
+            '@': './src',
           },
         },
       ],
